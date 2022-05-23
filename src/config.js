@@ -5,8 +5,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "Bora's Dummy Collection";
+const description = "This dummies made it here so far!";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -23,27 +23,44 @@ const solanaMetadata = {
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
+
+  // If you want to have 10k collection with accurate rarities, you should aim to generate 200k images. 
+  // Formula is: (layer1 size) * (layer2 size) * (layer3 size) = Total Size
+  // For this test: 3 * 1 * 3 * 3 * 5 = 135. I can generate 10 images with accurate rarity.
+
   {
     growEditionSizeTo: 5,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Body" },
+      { name: "Eye" },
+      { name: "Mouth" },
+      { name: "Extra" },
     ],
-  },
+  },/*
+  {
+    growEditionSizeTo: 10000,   // Add the number to previous one. If you want to have 10k collection from 2 types where each type has 5k images. You should make the size of first type 5k and second type 10k. 
+    layersOrder: [
+      { name: "Background" },
+      { name: "Type2 Body" },
+      { name: "Type2 Eye" },
+      { name: "Type2 Mouth" },
+      { name: "Type2 Extra" },
+      { name: "Type2 Extra1" },
+      { name: "Type2 Extra2" },
+    ],
+  },*/
 ];
 
+// Mix the Types to have random generation
 const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
 
+// Image sizes
 const format = {
-  width: 512,
-  height: 512,
+  width: 51,      // Change it to your original size
+  height: 51,
   smoothing: false,
 };
 
