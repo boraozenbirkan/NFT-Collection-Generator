@@ -28,14 +28,23 @@ const layerConfigurations = [
   // Formula is: (layer1 size) * (layer2 size) * (layer3 size) = Total Size
   // For this test: 3 * 1 * 3 * 3 * 5 = 135. I can generate 10 images with accurate rarity.
 
+  // 16,875 > 8,000       1k accurate
+  // 3,375	 > 2,225      280 accurate
+  // 675	 > 521
+  // 225 	 > 205
+  // 135	 > 132
+  // 90 	 > 89
+  // 45 	 > 45         
+
   {
-    growEditionSizeTo: 5,
-    layersOrder: [
+    growEditionSizeTo: 1000,
+    layersOrder: [  // I have 20k element. 
       { name: "Background" },
       { name: "Body" },
       { name: "Eye" },
       { name: "Mouth" },
       { name: "Extra" },
+      { name: "Accessory" },
     ],
   },/*
   {
@@ -59,8 +68,8 @@ const debugLogs = false;
 
 // Image sizes
 const format = {
-  width: 51,      // Change it to your original size
-  height: 51,
+  width: 512,      // Change it to your original size
+  height: 512,
   smoothing: false,
 };
 
@@ -99,7 +108,7 @@ const extraMetadata = {};
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 10000;
+const uniqueDnaTorrance = 100000; // Default: 10000
 
 const preview = {
   thumbPerRow: 5,
