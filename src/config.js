@@ -7,7 +7,7 @@ const network = NETWORK.eth;
 // General metadata for Ethereum
 const namePrefix = "Bora's Dummy Collection";
 const description = "This dummies made it here so far!";
-const baseUri = "ipfs://NewUriToReplace";
+const baseUri = "ipfs://QmPAqozJyL13FJkw44wWGcqX3cRzMB9eVp6QmJe1fvCedj";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -26,15 +26,7 @@ const layerConfigurations = [
 
   // If you want to have 10k collection with accurate rarities, you should aim to generate 200k images. 
   // Formula is: (layer1 size) * (layer2 size) * (layer3 size) = Total Size
-  // For this test: 3 * 1 * 3 * 3 * 5 = 135. I can generate 10 images with accurate rarity.
-
-  // 16,875 > 8,000       1k accurate
-  // 3,375	 > 2,225      280 accurate
-  // 675	 > 521
-  // 225 	 > 205
-  // 135	 > 132
-  // 90 	 > 89
-  // 45 	 > 45         
+  // For this test: 3 * 1 * 3 * 3 * 5 = 135. I can generate 10 images with accurate rarity. You should generate 5-10% of what you can to have accurate rarity.       
 
   {
     growEditionSizeTo: 1000,
